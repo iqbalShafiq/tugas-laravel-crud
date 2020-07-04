@@ -19,6 +19,15 @@
                         <td> {{ $question->judul }} </td>
                         <td> {{ $question->isi }} </td>
                         <td> <a href="/jawaban/{{$question->id}}" class="btn btn-dark">Jawaban</a> </td>
+                        <td> <a href="/pertanyaan/{{$question->id}}" class="btn btn-success">Detail</a> </td>
+                        <td> <a href="/pertanyaan/{{$question->id}}/edit" class="btn btn-primary">Edit</a> </td>
+                        <td>
+                            <form action="/pertanyaan/{{$question->id}}"  method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

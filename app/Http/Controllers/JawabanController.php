@@ -11,7 +11,7 @@ class JawabanController extends Controller
     public function index($pertanyaan_id)
     {
         $answers = Answer::get_jawaban($pertanyaan_id);
-        $question = Question::get_questions()->where('id', $pertanyaan_id);
+        $question = Question::get_question($pertanyaan_id);
 
         return view('jawaban', compact('answers', 'question'));
     }

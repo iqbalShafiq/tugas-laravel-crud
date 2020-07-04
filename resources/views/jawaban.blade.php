@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container py-4 mb-4">
-        <h2>Jawaban dari Pertanyaan: <br> {{ $question[0]->isi }} </h2>        
+        <h2>Jawaban dari Pertanyaan: <br> {{ $question->isi }} </h2>        
         <table class="table table-hover">
             <thead>
                 <tr>

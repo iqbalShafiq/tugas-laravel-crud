@@ -28,4 +28,28 @@ class PertanyaanController extends Controller
 
         return redirect('/pertanyaan');
     }
+
+    public function edit($id)
+    {
+        $question = Question::edit_question($id);
+        return view('updatePertanyaan', compact('question'));
+    }
+
+    public function show($id)
+    {
+        $question = Question::get_question($id);
+        return view('detailPertanyaan', compact('question'));
+    }
+
+    public function update($id, Request $request)
+    {
+        Question::update_question($id, $request->all());
+        return redirect('/pertanyaan/' . $id);
+    }
+
+    public function destroy($id)
+    {
+        Question::destroy_question($id);
+        return redirect('/pertanyaan');
+    }
 }
